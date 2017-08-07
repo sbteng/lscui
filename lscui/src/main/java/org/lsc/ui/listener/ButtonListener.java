@@ -26,6 +26,11 @@ public class ButtonListener
     String command = event.getActionCommand();
     if (command.equals("Start"))
     {
+
+    	if (!this.ldapBoard.ou.isSelected() && !this.ldapBoard.group.isSelected() && !this.ldapBoard.people.isSelected()  ){
+    		System.err.println("No option is selected!");
+    		return;
+    	}
       System.out.println("command Start");
       if (!this.procthread.isAlive()) {
         this.procthread.start();

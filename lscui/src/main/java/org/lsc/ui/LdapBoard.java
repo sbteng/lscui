@@ -23,6 +23,7 @@ public class LdapBoard
   public JRadioButton group = new JRadioButton("group", false);
   public JRadioButton people = new JRadioButton("people", false);
   public JLabel successNum = new JLabel("0");
+  public JLabel radioLab = new JLabel("Please select the options to sync:");
   public JLabel failedNum = new JLabel("0");
   public JTextArea log_output = new JTextArea("The log content:\n");
   public JScrollPane textscroll = new JScrollPane(this.log_output,
@@ -45,6 +46,7 @@ public class LdapBoard
     this.people.setFont(this.people.getFont().deriveFont(18.0F));
 
     JPanel checkPanel = new JPanel();
+    checkPanel.add(this.radioLab);
     checkPanel.add(this.ou);
     checkPanel.add(this.people);
     checkPanel.add(this.group);
